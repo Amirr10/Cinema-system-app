@@ -1,0 +1,170 @@
+
+POST http://localhost:5000/sub/movies/insert
+content-type: application/json
+ 
+{
+    "name": "The Internship",
+    "genres": ["Drama"],
+    "image": {
+        "medium": "JAJA.jpg",
+        "original": "JA.jpg"
+    },
+    "premiered": "{{$datetime rfc1123}}"
+}
+
+###
+
+POST http://localhost:5000/sub/members/insert
+content-type: application/json
+ 
+{
+    "Name": "MESSI",
+    "Email": "ROSARIO@gmail.com",
+    "City": "rosario"
+}
+
+###
+
+DELETE  http://localhost:5000/sub/members/delete/609d358cac536517ec404194
+content-type: application/json
+ 
+{
+    "Name": "Joe"
+}
+
+###
+
+DELETE  http://localhost:5000/sub/movies/delete/6091d098295410217c47d0c5
+content-type: application/json
+ 
+{
+    "Name": "Joe"
+}
+
+
+###
+
+PUT http://localhost:5000/sub/members/update/6091d097295410217c47d0ba HTTP/1.1
+content-type: application/json
+ 
+{
+    "Name": "john",
+    "Email": "barca@gmail.com",
+    "City": "Barcelona"
+}
+
+###
+
+PUT http://localhost:5000/sub/movies/update/6091d098295410217c47d0c6 HTTP/1.1
+content-type: application/json
+ 
+{
+    "name": "The Internship",
+    "genres": ["Drama"],
+    "image": {
+        "medium": "JAJA.jpg",
+        "original": "JA.jpg"
+    },
+    "premiered": "{{$datetime rfc1123}}"
+}
+
+
+###
+
+POST http://localhost:5000/sub/newSubs
+content-type: application/json
+ 
+{
+    "memberId":"6091d097295410217c47d0ba",
+    "movieId":"A"
+
+}
+
+###
+
+POST http://localhost:5000/sub/newSubs
+content-type: application/json
+ 
+{
+    "memberId":"6091d097295410217c47d0ba6",
+    "movieId":"6091d098295410217c47d0c7000",
+    "date": "{{$datetime rfc1123}}"
+}
+
+###
+
+GET  http://localhost:5000/sub/members/60a38d9abd6e715d38fd0a00
+content-type: application/json
+ 
+###
+
+GET  http://localhost:5000/sub/movies/6091d098295410217c47d0c7
+content-type: application/json
+ 
+###
+
+GET  http://localhost:5000/sub/getSubs
+content-type: application/json
+
+
+###
+
+POST http://localhost:5000/auth/login
+content-type: application/json
+ 
+{
+    "username":"Amir",
+    "password":123
+}
+
+###
+
+POST http://localhost:5000/cinema/allSubs
+content-type: application/json
+x-access-token:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDkxZDY0MDY5MzE4YTA5NDRiNTdmYjkiLCJpYXQiOjE2MjE4OTg4NzAsImV4cCI6MTYyMTg5ODg4MH0.SUBDJQG7eNQIvWBIESrNKct6wxktVSAX1ScgrCRmeSg'
+
+
+###
+
+GET http://localhost:5000/cinema/6091d64069318a0944b57fb9
+content-type: application/json
+
+###
+
+GET http://localhost:5000/cinema
+content-type: application/json
+
+
+###
+
+POST http://localhost:5000/cinema/add
+content-type: application/json
+ 
+{
+    "firstname":"Luis",
+    "lastname":"Suarez",
+    "username":"Luis12",
+    "session":"12",
+    "createdDate":"{{$datetime rfc1123}}",
+    "type": "user",
+    "permissions": [
+        {"View Subscriptions":false},
+        {"Create Subscriptions":false},
+        {"Delete Subscriptions":false},
+        {"Update Subscriptions":false},
+        {"View Movie":false},
+        {"Create Movie":false},
+        {"Delete Movie":false},
+        {"Update Movie":false}
+    ]
+}
+
+###
+
+DELETE  http://localhost:5000/cinema/60ae472b8dae56119c4fd272
+content-type: application/json
+
+###
+
+PUT http://localhost:5000/cinema/60ae4644f77d7f509404279c
+content-type: application/json

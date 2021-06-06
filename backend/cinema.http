@@ -1,0 +1,11 @@
+POST http://localhost:5000/cinema/subscribe
+content-type: application/json
+ 
+{
+    "id": "6091d097295410217c47d0ba",
+    "movie": {"name":"The Movie"}
+}
+
+
+###
+
